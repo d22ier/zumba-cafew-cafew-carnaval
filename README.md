@@ -29,3 +29,11 @@ A video game with three.js
 - [ ] : As a ennemy, I want to move on one axe
 - [X] : As a player, I want to decrease my life when I am touch by an ennemy
 - [X] : As a player, I want to decrease my life when I fall 
+
+**MA NOTE**
+
+Ma note : 70sur100 
+
+Ah, ah, poto, que pasa? Ah, ah, dans la cabeza !!
+Cordialement, 
+Didier 
