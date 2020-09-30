@@ -13,6 +13,15 @@ function update()
     if (keyboard.pressed("down"))
         player1.decelerate(moveDistance);
 
+    xE = Math.floor(ennemy1.position.x)
+    yE = Math.floor(ennemy1.position.y)
+    xP = Math.floor(player1.position.x)
+    yP = Math.floor(player1.position.y)
+    console.log("Ennemy  " + xE + " : " + yE)
+    console.log("Player  " + xP + " : " + yP)
+    if (xE == xP && yE == yP)
+        player1.dead()
+
     player1.move();
     controls.update();
 }

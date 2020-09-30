@@ -22,17 +22,20 @@ function init(life) {
     $container.append(renderer.domElement);
 
     noGround = [];
-    ground = new Ground(0xffffff, WIDTH, HEIGHT, 10);
-    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0, life);
+    ground = new Ground(0xffffff, WIDTH, HEIGHT, 10, life);
+    console.log(scene.getObjectByName("couleur"))
+    xxx = scene.getObjectByName("couleur").position.x
+    yyy = scene.getObjectByName("couleur").position.y
+    player1 = new Player("player1", 0xffff00, new THREE.Vector2(xxx, yyy), 0, life);
+    ennemy1 = new Player("ennemy1", 0xffff22, new THREE.Vector2(50, 0), 0, life);
     scene.add(player1.graphic);
-
+    scene.add(ennemy1.graphic);
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
 }
 
 function Ground(color, size_x, size_y, nb_tile) {
     colors = Array(0xff0000, 0x00ff00, 0x0000ff, 0x000000);
-
     sizeOfTileX = size_x / nb_tile;
     minX = -(size_x / 2);
     maxX = (size_x / 2);
@@ -51,6 +54,7 @@ function Ground(color, size_x, size_y, nb_tile) {
                     new THREE.MeshLambertMaterial({ color: color, transparent: true, opacity: 0.6 }));
                 tmpGround.position.x = x;
                 tmpGround.position.y = y;
+                tmpGround.name = "couleur"
                 scene.add(tmpGround);
             }
             else
